@@ -1,49 +1,44 @@
 # Dynamic Music Framework
 
-SKSE plugin for Skyrim Special Edition that plays custom music during boss fights and ambient zones, with an in-game menu powered by SKSE Menu Framework.
+SKSE plugin for Skyrim Special Edition / Anniversary Edition that plays custom music during boss fights and ambient zones, with a real-time in-game menu powered by SKSE Menu Framework.
 
 ## Features
-- Boss combat music: per-boss / per-category tracks, Phase 2 transition on HP threshold, fade in/out.
-- Ambient/zone music: Inns, Cities, Shops, Dungeons, triggered on location change.
-- Multi-boss support (concurrent bosses).
-- Per-track enable/disable checkboxes and Combat/Ambient master toggles.
-- Vanilla combat music suppression.
-- Alt-tab pause, loading screen delay, dialogue volume ducking.
-- Wait/Sleep menu fade pause.
-- Thread-safe folder scanning and audio engine (miniaudio).
-- Single DLL, no extra runtime dependencies.
+- **Boss Combat Music:** Per-boss or per-category custom tracks, configurable HP-threshold Phase 2 transitions, and smooth crossfades[cite: 6, 9, 10, 11].
+- **Ambient / Zone Music:** Optional background music for **Inns**, **Cities** (automatically distinguishes city walls from exterior outskirts), **Shops**, and **Dungeons**[cite: 2, 9].
+- **Independent Fade Controls:** Separate fade duration sliders for general transitions and **Combat ↔ Ambient** switches.
+- **Multi-Boss & Follower Support:** Tracks concurrent bosses and triggers music even when a follower initiates combat[cite: 11, 12].
+- **Smart Mod Compatibility:** Automatically pauses for map music mods (`MapMenu`), dialogue, and high-priority scene/bard audio while preventing vanilla or music overhaul tracks from overlapping[cite: 11].
+- **Live In-Game UI:** Per-track enable/disable checkboxes, audio preview player, shuffle toggle, and 1-click crosshair target boss overrides[cite: 9, 10].
+- **Alt-Tab & Menu Handling:** Automatically pauses when unfocused or inside pause menus, with volume ducking during dialogue[cite: 4, 11].
+- **Zero Dependencies & Native Streaming:** Powered by `miniaudio` (`.mp3`, `.wav`, `.ogg`, `.flac`) in a single standalone DLL with no extra runtime dependencies[cite: 4].
 
 ## Requirements
-- Skyrim Special Edition 1.6.x / 1.7.x (including 1.7.104)
-- SKSE64
-- SKSE Menu Framework
-- Address Library for SKSE Plugins
+- Skyrim Special Edition (1.5.97) or Anniversary Edition (1.6.x / 1.7.x, including 1.7.104)[cite: 8]
+- [SKSE64](https://skse.silverlock.org/)
+- [Address Library for SKSE Plugins](https://www.nexusmods.com/skyrimspecialedition/mods/32444)[cite: 8]
+- [SKSE Menu Framework](https://www.nexusmods.com/skyrimspecialedition/mods/120352)[cite: 9]
 
 ## Installation
-1. Extract the zip to your Skyrim Special Edition root (overwrite).
-2. Put audio files (`.mp3`, `.wav`, `.ogg`, `.flac`) into:
-   - `Data/Music/DynamicMusic/Combat/<Category>/`
-   - `Data/Music/DynamicMusic/Ambient/<Category>/`
+1. Install via **Mod Organizer 2** or **Vortex** (or extract the archive contents directly into your `Skyrim Special Edition\Data\` folder).
+2. Place your audio files (`.mp3`, `.wav`, `.ogg`, `.flac`) into[cite: 4]:
+   - `Data/Music/DynamicMusic/Combat/<Category>/`[cite: 4, 9]
+   - `Data/Music/DynamicMusic/Ambient/<Category>/`[cite: 4, 9]
 3. Launch Skyrim via SKSE.
 
-Categories (auto-created on first run):
-- Combat: Dragons, DragonPriests, Vampires, UniqueBosses, Phase2, GeneralBoss
-- Ambient: Inns, Cities, Shops, Dungeons
+**Categories (auto-created on first run)[cite: 4]:**
+- **Combat:** `Dragons`, `DragonPriests`, `Vampires`, `UniqueBosses`, `Phase2`, `GeneralBoss`[cite: 10]
+- **Ambient:** `Inns`, `Cities`, `Shops`, `Dungeons`[cite: 10]
 
 ## Usage
-- Open the SKSE Menu Framework menu → "Dynamic Music Framework".
-- Adjust volume, fade durations, toggles.
-- Use "Boss Overrides" tab to assign specific bosses to categories (crosshair grab supported).
-- Use "Categories & Tracks" tabs (Combat / Ambient) to preview and enable/disable tracks.
+- Open the **SKSE Menu Framework** overlay → **Dynamic Music Framework** → **Settings & Audio**[cite: 9].
+- Adjust master volume, fade durations, and Combat/Ambient toggles[cite: 9].
+- Use the **Boss Overrides** tab to assign specific bosses to categories (supports **Grab Crosshair Target**)[cite: 9].
+- Use the **Categories & Tracks** tab (Combat / Ambient) to preview and enable/disable individual tracks[cite: 9].
 
 ## Build
 - Visual Studio 2022/2026 + CMake 3.21+
 - vcpkg with colorglass registry (CommonLibSSE-NG via FetchContent)
-- Configure:
-  ```
+- Configure & Build:
+  ```bash
   cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=".../vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-windows-static-md
   cmake --build build --config Release
-  ```
-
-## License
-See repository.
