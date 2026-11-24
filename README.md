@@ -3,37 +3,37 @@
 SKSE plugin for Skyrim Special Edition / Anniversary Edition that plays custom music during boss fights and ambient zones, with a real-time in-game menu powered by SKSE Menu Framework.
 
 ## Features
-- **Boss Combat Music:** Per-boss or per-category custom tracks, configurable HP-threshold Phase 2 transitions, and smooth crossfades[cite: 6, 9, 10, 11].
-- **Ambient / Zone Music:** Optional background music for **Inns**, **Cities** (automatically distinguishes city walls from exterior outskirts), **Shops**, and **Dungeons**[cite: 2, 9].
+- **Boss Combat Music:** Per-boss or per-category custom tracks, configurable HP-threshold Phase 2 transitions, and smooth crossfades.
+- **Ambient / Zone Music:** Optional background music for **Inns**, **Cities** (automatically distinguishes city walls from exterior outskirts), **Shops**, and **Dungeons**.
 - **Independent Fade Controls:** Separate fade duration sliders for general transitions and **Combat ↔ Ambient** switches.
-- **Multi-Boss & Follower Support:** Tracks concurrent bosses and triggers music even when a follower initiates combat[cite: 11, 12].
-- **Smart Mod Compatibility:** Automatically pauses for map music mods (`MapMenu`), dialogue, and high-priority scene/bard audio while preventing vanilla or music overhaul tracks from overlapping[cite: 11].
-- **Live In-Game UI:** Per-track enable/disable checkboxes, audio preview player, shuffle toggle, and 1-click crosshair target boss overrides[cite: 9, 10].
-- **Alt-Tab & Menu Handling:** Automatically pauses when unfocused or inside pause menus, with volume ducking during dialogue[cite: 4, 11].
-- **Zero Dependencies & Native Streaming:** Powered by `miniaudio` (`.mp3`, `.wav`, `.ogg`, `.flac`) in a single standalone DLL with no extra runtime dependencies[cite: 4].
+- **Multi-Boss & Follower Support:** Tracks concurrent bosses and triggers music even when a follower initiates combat.
+- **Smart Mod Compatibility:** Automatically pauses for map music mods (`MapMenu`), dialogue, and high-priority scene/bard audio while preventing vanilla or music overhaul tracks from overlapping.
+- **Live In-Game UI:** Per-track enable/disable checkboxes, audio preview player, shuffle toggle, and 1-click crosshair target boss overrides.
+- **Alt-Tab & Menu Handling:** Automatically pauses when unfocused or inside pause menus, with volume ducking during dialogue.
+- **Zero Dependencies & Native Streaming:** Powered by `miniaudio` (`.mp3`, `.wav`, `.ogg`, `.flac`) in a single standalone DLL with no extra runtime dependencies.
 
 ## Requirements
-- Skyrim Special Edition (1.5.97) or Anniversary Edition (1.6.x / 1.7.x, including 1.7.104)[cite: 8]
+- Skyrim Special Edition (1.5.97) or Anniversary Edition (1.6.x / 1.7.x, including 1.7.104)
 - [SKSE64](https://skse.silverlock.org/)
-- [Address Library for SKSE Plugins](https://www.nexusmods.com/skyrimspecialedition/mods/32444)[cite: 8]
-- [SKSE Menu Framework](https://www.nexusmods.com/skyrimspecialedition/mods/120352)[cite: 9]
+- [Address Library for SKSE Plugins](https://www.nexusmods.com/skyrimspecialedition/mods/32444)
+- [SKSE Menu Framework](https://www.nexusmods.com/skyrimspecialedition/mods/120352)
 
 ## Installation
 1. Install via **Mod Organizer 2** or **Vortex** (or extract the archive contents directly into your `Skyrim Special Edition\Data\` folder).
-2. Place your audio files (`.mp3`, `.wav`, `.ogg`, `.flac`) into[cite: 4]:
-   - `Data/Music/DynamicMusic/Combat/<Category>/`[cite: 4, 9]
-   - `Data/Music/DynamicMusic/Ambient/<Category>/`[cite: 4, 9]
+2. Place your audio files (`.mp3`, `.wav`, `.ogg`, `.flac`) into:
+   - `Data/Music/DynamicMusic/Combat/<Category>/`
+   - `Data/Music/DynamicMusic/Ambient/<Category>/`
 3. Launch Skyrim via SKSE.
 
-**Categories (auto-created on first run)[cite: 4]:**
-- **Combat:** `Dragons`, `DragonPriests`, `Vampires`, `UniqueBosses`, `Phase2`, `GeneralBoss`[cite: 10]
-- **Ambient:** `Inns`, `Cities`, `Shops`, `Dungeons`[cite: 10]
+**Categories (auto-created on first run):**
+- **Combat:** `Dragons`, `DragonPriests`, `Vampires`, `UniqueBosses`, `Phase2`, `GeneralBoss`
+- **Ambient:** `Inns`, `Cities`, `Shops`, `Dungeons`
 
 ## Usage
-- Open the **SKSE Menu Framework** overlay → **Dynamic Music Framework** → **Settings & Audio**[cite: 9].
-- Adjust master volume, fade durations, and Combat/Ambient toggles[cite: 9].
-- Use the **Boss Overrides** tab to assign specific bosses to categories (supports **Grab Crosshair Target**)[cite: 9].
-- Use the **Categories & Tracks** tab (Combat / Ambient) to preview and enable/disable individual tracks[cite: 9].
+- Open the **SKSE Menu Framework** overlay → **Dynamic Music Framework** → **Settings & Audio**.
+- Adjust master volume, fade durations, and Combat/Ambient toggles.
+- Use the **Boss Overrides** tab to assign specific bosses to categories (supports **Grab Crosshair Target**).
+- Use the **Categories & Tracks** tab (Combat / Ambient) to preview and enable/disable individual tracks.
 
 ## Build
 - Visual Studio 2022/2026 + CMake 3.21+
