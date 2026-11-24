@@ -43,10 +43,10 @@ SKSE plugin for Skyrim Special Edition / Anniversary Edition that plays custom m
   cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=".../vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-windows-static-md
   cmake --build build --config Release
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+  ## License
+This project is licensed under the [GNU General Public License v3.0 (GPL-3.0)](LICENSE).
 
 ### Third-Party Libraries
-- [CommonLibSSE-NG](https://github.com/CharmedBaryon/CommonLibSSE-NG) (MIT License)
+- [CommonLibSSE-NG](https://github.com/CharmedBaryon/CommonLibSSE-NG) (GPL-3.0)
 - [miniaudio](https://github.com/mackron/miniaudio) (Public Domain / MIT-0)
 - [nlohmann/json](https://github.com/nlohmann/json) (MIT License)
