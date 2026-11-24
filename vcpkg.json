@@ -1,0 +1,10 @@
+{
+  "name": "dynamic-music-framework",
+  "version-string": "1.0.0",
+  "dependencies": [
+    "directxtk",
+    "nlohmann-json",
+    "rapidcsv",
+    "spdlog"
+  ]
+}
